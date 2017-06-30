@@ -1,17 +1,50 @@
 package sample;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
-
-import static org.junit.Assert.*;
-
-/**
- * Created by chasepugh on 6/29/17.
- */
-public class AmbientDeviceTest {
+class AmbientDeviceTest {
   @Test
-  public void getColor() throws Exception {
-    AmbientDevice myDevice = new AmbientDevice(99,99);
-    //assertEquals("")
-  }
+  void getColor() {
+    AmbientDevice myDevice;
+    myDevice = new AmbientDevice(1,1);
+    assertEquals(myDevice.getColor(),"#8000ff" );
+    
+    myDevice.setColor(99);
+    //This test should fail
+    //assertEquals(myDevice.getColor(),"#8000ff" );
 
+    assertEquals("#ff0000", myDevice.getColor());
+
+    myDevice.setColor(-1);
+    assertEquals("#ffffff", myDevice.getColor());
+
+    myDevice.setColor(100);
+    assertEquals("#ffffff", myDevice.getColor());
+
+    myDevice.setColor(40);
+    assertEquals("#ff0080", myDevice.getColor());
+
+  }
+  @Test
+  void getBrightness() {
+    AmbientDevice myDevice;
+    myDevice = new AmbientDevice(99,1);
+    assertEquals(0.4, myDevice.getBrightness());
+
+    myDevice.setBrightness(99);
+    //This test should fail
+    //assertEquals(0.4, myDevice.getColor());
+
+    assertEquals(0.0, myDevice.getBrightness());
+
+    myDevice.setBrightness(-1);
+    assertEquals(1.0, myDevice.getBrightness());
+
+    myDevice.setBrightness(100);
+    assertEquals(0.0, myDevice.getBrightness());
+
+    myDevice.setBrightness(40);
+    assertEquals(0.2, myDevice.getBrightness());
+
+  }
 }
