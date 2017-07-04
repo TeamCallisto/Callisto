@@ -8,7 +8,7 @@ class AmbientDeviceTest {
     AmbientDevice myDevice;
     myDevice = new AmbientDevice(1,1);
     assertEquals(myDevice.getColor(),"#8000ff" );
-    
+
     myDevice.setColor(99);
     //This test should fail
     //assertEquals(myDevice.getColor(),"#8000ff" );
