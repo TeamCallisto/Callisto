@@ -30,7 +30,7 @@ public class Main extends Application  {
 
           //create and initialize objects
           displayCircle = new Circle(150);
-          myDevice = new AmbientDevice(1,0);
+          myDevice = new AmbientDevice(99,99);
           colorAdjust = new ColorAdjust();
           color = AmbientDevice.getColor();
           brightness = AmbientDevice.getBrightness();
