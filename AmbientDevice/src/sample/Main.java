@@ -9,6 +9,18 @@ import javafx.stage.Stage;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.paint.Color;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.HashMap;
+import java.util.Map;
+
+
+
+
 
 public class Main extends Application  {
 
@@ -45,6 +57,21 @@ public class Main extends Application  {
           layout.getChildren().add(displayCircle);
           primaryStage.setScene(new Scene(layout, 400, 350));
           primaryStage.show();
+
+        Document data = Jsoup.connect("http://www.spk-wc.usace.army.mil/fcgi-bin/hourly.py?report=pnf").timeout(6000).get();
+        Elements elements = data.select("pre");
+        String myString = elements.toString();
+        Scanner scan = new Scanner(myString);
+        Map dictionary = new HashMap();
+        for(int i = 0; i < 10; i++) {
+          String line = scan.nextLine();
+          Pattern p = Pattern.compile("([0-9]{2}[A-Z]{3,4}[0-9]{4})\\s+[0-9]*\\s+[0-9\\.]*\\s+[0-9]*\\s+[0-9\\.]*\\s+([0-9]*)\\s+([0-9]*)");
+          Matcher m = p.matcher(line);
+          if ( m.find()){
+            System.out.println(m.group(3));
+          }
+        }
+
     }
 
 }
