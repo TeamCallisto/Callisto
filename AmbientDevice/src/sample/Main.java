@@ -17,6 +17,9 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+
 
 
 
@@ -58,18 +61,38 @@ public class Main extends Application  {
           primaryStage.setScene(new Scene(layout, 400, 350));
           primaryStage.show();
 
+        //Grab data from website with Jsoup webscrapping library
         Document data = Jsoup.connect("http://www.spk-wc.usace.army.mil/fcgi-bin/hourly.py?report=pnf").timeout(6000).get();
         Elements elements = data.select("pre");
         String myString = elements.toString();
+
+        //Put the data into a scanner object
         Scanner scan = new Scanner(myString);
-        Map dictionary = new HashMap();
-        for(int i = 0; i < 10; i++) {
+
+        //Create a map to store the time of the event and the values
+        Map<String,List<String>> multiMap = new HashMap<String,List<String>>();
+
+
+        //Loop through the data a pull out the inflow and outflow data
+        while (scan.hasNextLine()) {
           String line = scan.nextLine();
-          Pattern p = Pattern.compile("([0-9]{2}[A-Z]{3,4}[0-9]{4})\\s+[0-9]*\\s+[0-9\\.]*\\s+[0-9]*\\s+[0-9\\.]*\\s+([0-9]*)\\s+([0-9]*)");
+          Pattern p = Pattern.compile("([0-9]{2}[A-Z]{3,4}[0-9]{4})\\s+([0-9]*)\\s+[0-9\\.]*\\s+[0-9]*\\s+[0-9\\.]*\\s+([0-9]*)\\s+([0-9]*)");
           Matcher m = p.matcher(line);
           if ( m.find()){
-            System.out.println(m.group(3));
+            String key = m.group(1)+ m.group(2);
+            List<String> values = new ArrayList<String>();
+            values.add(m.group(3));
+            values.add(m.group(4));
+            multiMap.put(key, values);
           }
+        }
+
+        //Loop through the map and print the values
+        for (Map.Entry<String, List<String>> entry : multiMap.entrySet()) {
+          String key = entry.getKey();
+          List<String> values = entry.getValue();
+          System.out.println("Key = " + key);
+          System.out.println("Values = " + values + "n");
         }
 
     }
