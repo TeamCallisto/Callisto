@@ -2,47 +2,57 @@ package sample;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.effect.ColorAdjust;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import javafx.scene.layout.StackPane;
-import javafx.scene.shape.Circle;
-import javafx.scene.paint.Color;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-import java.util.Scanner;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.IOException;
 
 
+public class Main extends Application {
 
+  private Stage primaryStage;
+  private BorderPane rootLayout;
 
-
-
-public class Main extends Application  {
-
-    //declare variables and objects
-    Circle displayCircle;
-    AmbientDevice myDevice;
-    String color;
-    Double brightness;
-    ColorAdjust colorAdjust;
-
-    public static void main(String[] args) {
-    launch(args);
+  @Override
+  public void start(Stage primaryStage) throws Exception {
+    this.primaryStage = primaryStage;
+    primaryStage.setTitle("AmbientDevice");
+    initRootLayout();
+    showUserView();
   }
 
-      @Override
-      public void start(Stage primaryStage) throws Exception{
-          Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-          primaryStage.setTitle("AmbientDevice");
+  public void initRootLayout() {
+    try {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(Main.class.getResource("view/RootLayout.fxml"));
+      rootLayout = (BorderPane) loader.load();
+      Scene scene = new Scene(rootLayout);
+      primaryStage.setScene(scene);
+      primaryStage.show();
 
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public void showUserView() {
+    try {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(Main.class.getResource("view/UserView.fxml"));
+      AnchorPane userView = (AnchorPane) loader.load();
+      rootLayout.setCenter(userView);
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+  public static void main(String[] args) {
+    launch(args);
+  }
+}
+
+/*
           //create and initialize objects
           displayCircle = new Circle(150);
           myDevice = new AmbientDevice(1,0);
@@ -95,6 +105,5 @@ public class Main extends Application  {
           System.out.println("Values = " + values + "n");
         }
 
-    }
+    }*/
 
-}

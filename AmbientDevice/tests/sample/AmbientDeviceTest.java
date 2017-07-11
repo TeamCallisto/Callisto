@@ -1,5 +1,7 @@
 package sample;
 import org.junit.jupiter.api.Test;
+import sample.model.AmbientDevice;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AmbientDeviceTest {

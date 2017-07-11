@@ -1,4 +1,4 @@
-package sample;
+package sample.model;
 public class AmbientDevice {
 
   private static int colorNumber;
