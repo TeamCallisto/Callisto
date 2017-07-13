@@ -17,15 +17,15 @@ import java.util.ResourceBundle;
 public class AmbientController implements Initializable {
   @FXML
   private Sphere ambientSphere;
-  private AmbientDevice myDevice;
   @FXML
-  private Label waterFlowDate;
+  private Label waterFlowDate,waterFlowTitle;
   @FXML
   private Label waterFlowTime;
   @FXML
   private Label waterFlowOutflow;
   @FXML
   private Label waterFlowInflow;
+  private AmbientDevice myDevice;
 
   /**
    * This code initializes the AmbientDevice display to the default values
@@ -50,5 +50,6 @@ public class AmbientController implements Initializable {
     waterFlowTime.setText("Time: " + currentData.getTime());
     waterFlowOutflow.setText("Outflow: " + currentData.getOutflow());
     waterFlowInflow.setText("Inflow: " + currentData.getInflow());
+    waterFlowTitle.setText("Kings River Basin Inflow and Outflow Data");
   }
 }

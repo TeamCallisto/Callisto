@@ -11,7 +11,7 @@
       <Button fx:id="waterflow" layoutX="570.0" layoutY="87.0" mnemonicParsing="false" onAction="#handleWaterFlowClick" text="WaterFlow" />
       <Button fx:id="trafficdata" layoutX="569.0" layoutY="153.0" mnemonicParsing="false" text="TrafficData" />
       <Label layoutX="552.0" layoutY="48.0" prefHeight="17.0" prefWidth="137.0" text="Choose data source" />
-      <Pane fx:id="ambientpane" layoutX="39.0" layoutY="39.0" prefHeight="313.0" prefWidth="331.0">
+      <Pane fx:id="ambientpane" layoutX="41.0" layoutY="57.0" prefHeight="313.0" prefWidth="331.0">
          <children>
             <Sphere fx:id="ambientSphere" layoutX="178.0" layoutY="144.0" radius="0.77">
             </Sphere>
@@ -23,5 +23,6 @@
             <Label fx:id="waterFlowOutflow" layoutX="31.0" layoutY="100.0" />
             <Label fx:id="waterFlowInflow" layoutX="31.0" layoutY="140.0" />
          </children></Pane>
+      <Label fx:id="waterFlowTitle" layoutX="15.0" layoutY="23.0"/>
    </children>
 </AnchorPane>
