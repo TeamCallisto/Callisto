@@ -2,20 +2,26 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.ColorInput?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Sphere?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AmbientController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AmbientController">
    <children>
-      <Button fx:id="waterflow" onAction="#handleWaterFlowClick" layoutX="468.0" layoutY="65.0" mnemonicParsing="false" text="WaterFlow" />
-      <Button fx:id="trafficdata" layoutX="466.0" layoutY="114.0" mnemonicParsing="false" text="TrafficData" />
-      <Label layoutX="442.0" layoutY="28.0" prefHeight="17.0" prefWidth="137.0" text="Choose data source" />
+      <Button fx:id="waterflow" layoutX="570.0" layoutY="87.0" mnemonicParsing="false" onAction="#handleWaterFlowClick" text="WaterFlow" />
+      <Button fx:id="trafficdata" layoutX="569.0" layoutY="153.0" mnemonicParsing="false" text="TrafficData" />
+      <Label layoutX="552.0" layoutY="48.0" prefHeight="17.0" prefWidth="137.0" text="Choose data source" />
       <Pane fx:id="ambientpane" layoutX="39.0" layoutY="39.0" prefHeight="313.0" prefWidth="331.0">
          <children>
             <Sphere fx:id="ambientSphere" layoutX="178.0" layoutY="144.0" radius="0.77">
             </Sphere>
+         </children></Pane>
+      <Pane layoutX="14.0" layoutY="352.0" prefHeight="197.0" prefWidth="632.0">
+         <children>
+            <Label fx:id="waterFlowDate" layoutX="31.0" layoutY="20.0" />
+            <Label fx:id="waterFlowTime" layoutX="31.0" layoutY="60.0" />
+            <Label fx:id="waterFlowOutflow" layoutX="31.0" layoutY="100.0" />
+            <Label fx:id="waterFlowInflow" layoutX="31.0" layoutY="140.0" />
          </children></Pane>
    </children>
 </AnchorPane>
