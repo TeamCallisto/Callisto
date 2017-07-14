@@ -19,13 +19,7 @@ public class AmbientController implements Initializable {
   @FXML
   private Sphere ambientSphere;
   @FXML
-  private Label waterFlowDate, waterFlowTitle;
-  @FXML
-  private Label waterFlowTime;
-  @FXML
-  private Label waterFlowOutflow;
-  @FXML
-  private Label waterFlowInflow;
+  private Label waterFlowDate, waterFlowTitle, waterFlowTime, waterFlowOutflow, waterFlowInflow;
   private AmbientDevice myDevice;
 
 

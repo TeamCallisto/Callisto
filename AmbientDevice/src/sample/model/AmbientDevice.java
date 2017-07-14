@@ -4,8 +4,8 @@ import javafx.scene.paint.Color;
 
 public class AmbientDevice {
 
-  private static int colorNumber;
-  private static int brightnessNumber;
+  private int colorNumber;
+  private int brightnessNumber;
 
 
   //public constructor
@@ -23,7 +23,7 @@ public class AmbientDevice {
     brightnessNumber = newBrightness;
   }
 
-  public static Color getColor() {
+  public  Color getColor() {
     switch (colorNumber) {
       case 1:
         return Color.web("#00FF00");
@@ -227,7 +227,7 @@ public class AmbientDevice {
 
   }
 
-  public static double getBrightness() {
+  public double getBrightness() {
     if (brightnessNumber <= 0) {
       return 1.0;                           // indicates the device is off
     } else if (brightnessNumber < 10) {
