@@ -2,13 +2,14 @@ package sample.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.effect.ColorAdjust;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
-import javafx.scene.control.Label;
 import sample.model.AmbientDevice;
 import sample.model.WaterFlowData;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,7 +19,7 @@ public class AmbientController implements Initializable {
   @FXML
   private Sphere ambientSphere;
   @FXML
-  private Label waterFlowDate,waterFlowTitle;
+  private Label waterFlowDate, waterFlowTitle;
   @FXML
   private Label waterFlowTime;
   @FXML
@@ -26,6 +27,7 @@ public class AmbientController implements Initializable {
   @FXML
   private Label waterFlowInflow;
   private AmbientDevice myDevice;
+
 
   /**
    * This code initializes the AmbientDevice display to the default values
@@ -45,7 +47,12 @@ public class AmbientController implements Initializable {
     myDevice.setColor(currentData.calculateOverflow());
     PhongMaterial phongMaterial = new PhongMaterial();
     phongMaterial.setDiffuseColor(myDevice.getColor());
+    phongMaterial.setSpecularColor(Color.WHITE);
+    phongMaterial.setSpecularPower(1.0);
+    ColorAdjust colorAdjust = new ColorAdjust();
+    colorAdjust.setSaturation(10.0);
     ambientSphere.setMaterial(phongMaterial);
+
     waterFlowDate.setText("Date: " + currentData.getDate());
     waterFlowTime.setText("Time: " + currentData.getTime());
     waterFlowOutflow.setText("Outflow: " + currentData.getOutflow());

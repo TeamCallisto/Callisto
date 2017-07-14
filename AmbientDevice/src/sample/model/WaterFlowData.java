@@ -52,12 +52,14 @@ public class WaterFlowData {
           if (m.group(3) == "-NR-") {
             outflow = 0;
           } else {
-            outflow = Integer.parseInt(m.group(3));
+            //outflow = Integer.parseInt(m.group(3));
+            outflow = 4000;
           }
           if (m.group(4) == "-NR-") {
             inflow = 0;
           } else {
-            inflow = Integer.parseInt(m.group(4));
+            //inflow = Integer.parseInt(m.group(4));
+            inflow = 9000;
           }
           date = m.group(1);
           time = m.group(2);
@@ -89,28 +91,29 @@ public class WaterFlowData {
     } else {
       overage = inflow - outflow;
       overageActual = overage;
-      if (overage > 10000) {
-        overage = 100;
-      } else if (overage > 5000) {
-        overage = 90;
-      } else if (overage > 3000) {
-        overage = 80;
-      } else if (overage > 2500) {
-        overage = 70;
-      } else if (overage > 2000) {
-        overage = 60;
-      } else if (overage > 1500) {
-        overage = 50;
-      } else if (overage > 1000) {
-        overage = 40;
-      } else if (overage > 800) {
-        overage = 30;
-      } else if (overage > 500) {
-        overage = 20;
-      } else if (overage > 200) {
-        overage = 10;
-      } else
-        overage = 0;
+      overage = overageActual/50;
+//      if (overage > 10000) {
+//        overage = 100;
+//      } else if (overage > 5000) {
+//        overage = 90;
+//      } else if (overage > 3000) {
+//        overage = 80;
+//      } else if (overage > 2500) {
+//        overage = 70;
+//      } else if (overage > 2000) {
+//        overage = 60;
+//      } else if (overage > 1500) {
+//        overage = 50;
+//      } else if (overage > 1000) {
+//        overage = 40;
+//      } else if (overage > 800) {
+//        overage = 30;
+//      } else if (overage > 500) {
+//        overage = 20;
+//      } else if (overage > 200) {
+//        overage = 10;
+//      } else
+//        overage = 0;
 
     }
     System.out.println(overageActual + " actual");
