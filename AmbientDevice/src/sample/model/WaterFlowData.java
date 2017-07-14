@@ -12,12 +12,8 @@ import java.util.regex.Pattern;
 
 public class WaterFlowData {
 
-  private static String date;
-  private static String time;
-  private static int outflow;
-  private static int inflow;
-  private static int overage;
-  private static int overageActual;
+  private String date, time;
+  private int outflow, inflow, overage, overageActual;
 
   public WaterFlowData() throws IOException {
     this.date = "";
@@ -27,7 +23,7 @@ public class WaterFlowData {
     this.overage = 0;
   }
 
-  public static void setData() {
+  public void setData() {
 
     /* Grab data from website with Jsoup webscrapping library */
     Document data = null;
@@ -36,6 +32,7 @@ public class WaterFlowData {
     } catch (IOException e) {
       e.printStackTrace();
     }
+    assert data != null;
     Elements elements = data.select("pre");
     String myString = elements.toString();
 
@@ -69,6 +66,21 @@ public class WaterFlowData {
 
   }
 
+  public int calculateOverflow() {
+    if (outflow >= inflow) {
+      overage = 0;
+    } else {
+      overage = inflow - outflow;
+      overageActual = overage;
+      overage = overageActual / 50;
+    }
+    System.out.println(overageActual + " actual");
+    System.out.println(overage + " overage");
+    System.out.println(outflow + " outflow" + " ");
+    System.out.println(inflow + " inflow" + " ");
+    return overage;
+  }
+
   public String getDate() {
     return date;
   }
@@ -83,44 +95,6 @@ public class WaterFlowData {
 
   public int getOutflow() {
     return outflow;
-  }
-
-  public int calculateOverflow() {
-    if (outflow >= inflow) {
-      overage = 0;
-    } else {
-      overage = inflow - outflow;
-      overageActual = overage;
-      overage = overageActual/50;
-//      if (overage > 10000) {
-//        overage = 100;
-//      } else if (overage > 5000) {
-//        overage = 90;
-//      } else if (overage > 3000) {
-//        overage = 80;
-//      } else if (overage > 2500) {
-//        overage = 70;
-//      } else if (overage > 2000) {
-//        overage = 60;
-//      } else if (overage > 1500) {
-//        overage = 50;
-//      } else if (overage > 1000) {
-//        overage = 40;
-//      } else if (overage > 800) {
-//        overage = 30;
-//      } else if (overage > 500) {
-//        overage = 20;
-//      } else if (overage > 200) {
-//        overage = 10;
-//      } else
-//        overage = 0;
-
-    }
-    System.out.println(overageActual + " actual");
-    System.out.println(overage + " overage");
-    System.out.println(outflow + " outflow" + " ");
-    System.out.println(inflow + " inflow" + " ");
-    return overage;
   }
 }
 
