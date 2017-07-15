@@ -31,171 +31,171 @@ public class AmbientDevice {
       case 2:
         return Color.web("#12FF00");
       case 3:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#1CFF00");
       case 4:
         return Color.web("#1FFF00");
       case 5:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#24FF00"); 
       case 6:
-        return Color.web("#24FF00");
+        return Color.web("#2CFF00");
       case 7:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#2DFF00"); 
       case 8:
         return Color.web("#2FFF00");
       case 9:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#30FF00"); 
       case 10:
         return Color.web("#35FF00");
       case 11:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#3CFF00"); 
       case 12:
         return Color.web("#3FFF00");
       case 13:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#40FF00"); 
       case 14:
         return Color.web("#47FF00");
       case 15:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#50FF00"); 
       case 16:
-        return Color.web("#50FF00");
+        return Color.web("#55FF00");
       case 17:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#5CFF00");
       case 18:
         return Color.web("#5FFF00");
       case 19:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#60FF00"); 
       case 20:
         return Color.web("#65FFF0");
       case 21:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#68FF00"); 
       case 22:
         return Color.web("#6CFF00");
       case 23:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#6DFF00"); 
       case 24:
         return Color.web("#6FFF00");
       case 25:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#70FF00"); 
       case 26:
         return Color.web("#75FF00");
       case 27:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#7AFF00"); 
       case 28:
         return Color.web("#7CFF00");
       case 29:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#7FFF00"); 
       case 30:
         return Color.web("#80FF00");
       case 31:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#85FF00"); 
       case 32:
-        return Color.web("#8FFF00");
+        return Color.web("#8CFF00");
       case 33:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#8FFF00"); 
       case 34:
         return Color.web("#90FF00");
       case 35:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#9AFF00"); 
       case 36:
         return Color.web("#9FFF00");
       case 37:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#A0FF00"); 
       case 38:
-        return Color.web("#B0FF00");
+        return Color.web("#ACFF00");
       case 39:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#B0FF00"); 
       case 40:
         return Color.web("#B5FF00");
       case 41:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#BBFF00"); 
       case 42:
         return Color.web("#BFFF00");
       case 43:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#C0FF00"); 
       case 44:
         return Color.web("#C2FF00");
       case 45:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#C9FF00"); 
       case 46:
         return Color.web("#CDFF00");
       case 47:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#D0FF00"); 
       case 48:
         return Color.web("#D4FF00");
       case 49:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#DCFF00"); 
       case 50:
         return Color.web("#E0FF00");
       case 51:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#E2FF00"); 
       case 52:
         return Color.web("#E5FF00");
       case 53:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#ECFF00"); 
       case 54:
         return Color.web("#F0FF00");
       case 55:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#FCFF00"); 
       case 56:
         return Color.web("#F7FF00");
       case 57:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#F8FF00"); 
       case 58:
-        return Color.web("#FFF600");
+        return Color.web("#FFFF00");
       case 59:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#FFF600"); 
       case 60:
         return Color.web("#FFF000");
       case 61:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#FFEC00"); 
       case 62:
         return Color.web("#FFE400");
       case 63:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#FFE000"); 
       case 64:
-        return Color.web("#FFD900");
+        return Color.web("#FFDC00");
       case 65:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#FFD900"); 
       case 66:
         return Color.web("#FFD000");
       case 67:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#FFCC00"); 
       case 68:
         return Color.web("#FFC100");
       case 69:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#FFBB00"); 
       case 70:
         return Color.web("#FFAF00");
       case 71:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#FFAA00"); 
       case 72:
         return Color.web("#FFA000");
       case 73:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#FF9D00"); 
       case 74:
         return Color.web("#FF9E00");
       case 75:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#FF9900"); 
       case 76:
         return Color.web("#FF9000");
       case 77:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#FF8F00"); 
       case 78:
         return Color.web("#FF8C00");
       case 79:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#FF8500"); 
       case 80:
         return Color.web("#FF7F00");
       case 81:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#FF7C00"); 
       case 82:
-        return Color.web("#FF7B00");
+        return Color.web("#FF7800");
       case 84:
-        return Color.web("#00FF00"); //skip
+        return Color.web("#FF7500"); 
       case 85:
         return Color.web("#FF7000");
       case 86:
-        return Color.web("#FF6900");
+        return Color.web("#FF6F00");
       case 87:
         return Color.web("#FF6900");
       case 88:
@@ -203,7 +203,7 @@ public class AmbientDevice {
       case 89:
         return Color.web("#FF5700");
       case 90:
-        return Color.web("#00FF00");
+        return Color.web("#FF5500");
       case 91:
         return Color.web("#FF5000");
       case 92:
@@ -215,11 +215,11 @@ public class AmbientDevice {
       case 95:
         return Color.web("#FF3000");
       case 96:
-        return Color.web("#FF2300");
+        return Color.web("#FF2C00");
       case 97:
         return Color.web("#FF2100");
       case 98:
-        return Color.web("#FF1100");
+        return Color.web("#FF1D00");
       case 99:
         return Color.web("#FF1000");
       default:

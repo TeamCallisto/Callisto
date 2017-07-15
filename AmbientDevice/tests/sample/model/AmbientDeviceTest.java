@@ -1,8 +1,7 @@
-package sample;
-import org.junit.jupiter.api.Test;
-import sample.model.AmbientDevice;
+package sample.model;
+    import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+    import static org.junit.jupiter.api.Assertions.*;
 
 class AmbientDeviceTest {
   @Test

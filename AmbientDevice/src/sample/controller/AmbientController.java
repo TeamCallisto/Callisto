@@ -14,14 +14,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
 public class AmbientController implements Initializable {
   @FXML
   private Sphere ambientSphere;
   @FXML
   private Label waterFlowDate, waterFlowTitle, waterFlowTime, waterFlowOutflow, waterFlowInflow, waterFlowStatus;
   private AmbientDevice myDevice;
-
 
   /**
    * This code initializes the AmbientDevice display to the default values

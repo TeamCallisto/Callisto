@@ -9,7 +9,6 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
 public class WaterFlowData {
 
   private String date, time, status;
@@ -77,9 +76,7 @@ public class WaterFlowData {
         }
       }
     }
-
   }
-
   public int calculateOverflow() {
     if (outflow >= inflow) {
       overage = 0;
@@ -104,22 +101,12 @@ public class WaterFlowData {
     return overage;
   }
 
-  public String getDate() {
-    return date;
-  }
-
-  public String getTime() {
-    return time;
-  }
-
-  public String getStatus() {
-    return status;
-  }
-
+  public String getDate() { return date; }
+  public String getTime() { return time; }
+  public String getStatus() { return status; }
   public int getInflow() {
     return inflow;
   }
-
   public int getOutflow() {
     return outflow;
   }
