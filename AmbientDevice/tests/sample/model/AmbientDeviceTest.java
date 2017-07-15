@@ -8,44 +8,37 @@ class AmbientDeviceTest {
   void getColor() {
 //    AmbientDevice myDevice;
 //    myDevice = new AmbientDevice();
-//    assertEquals(myDevice.getColor(),"#8000ff" );
 //
-//    myDevice.setColor(99);
-//    //This test should fail
-//    //assertEquals(myDevice.getColor(),"#8000ff" );
+//    myDevice.setColor(1);
+//    assertEquals("0x00ff00ff", myDevice.getColor());
 //
-//    assertEquals("#ff0000", myDevice.getColor());
-//
-//    myDevice.setColor(-1);
-//    assertEquals("#ffffff", myDevice.getColor());
+//    myDevice.setColor(50);
+//    assertEquals("#E0FF00", myDevice.getColor());
 //
 //    myDevice.setColor(100);
-//    assertEquals("#ffffff", myDevice.getColor());
+//    assertEquals("#A9A9A9", myDevice.getColor());
 //
-//    myDevice.setColor(40);
-//    assertEquals("#ff0080", myDevice.getColor());
+//    myDevice.setColor(0);
+//    assertEquals("#00FF00", myDevice.getColor());
 
   }
   @Test
   void getBrightness() {
-//    AmbientDevice myDevice;
-//    myDevice = new AmbientDevice(99,1);
-//    assertEquals(0.4, myDevice.getBrightness());
-//
-//    myDevice.setBrightness(99);
-//    //This test should fail
-//    //assertEquals(0.4, myDevice.getColor());
-//
-//    assertEquals(0.0, myDevice.getBrightness());
-//
-//    myDevice.setBrightness(-1);
-//    assertEquals(1.0, myDevice.getBrightness());
-//
-//    myDevice.setBrightness(100);
-//    assertEquals(0.0, myDevice.getBrightness());
-//
-//    myDevice.setBrightness(40);
-//    assertEquals(0.2, myDevice.getBrightness());
+    AmbientDevice myDevice;
+    myDevice = new AmbientDevice();
+
+    myDevice.setBrightness(1);
+
+    assertEquals(10.0, myDevice.getBrightness());
+
+    myDevice.setBrightness(50);
+    assertEquals(4.0, myDevice.getBrightness());
+
+    myDevice.setBrightness(100);
+    assertEquals(1.0, myDevice.getBrightness());
+
+    myDevice.setBrightness(0);
+    assertEquals(12.0, myDevice.getBrightness());
 
   }
 }

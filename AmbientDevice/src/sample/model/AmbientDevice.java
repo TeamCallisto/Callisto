@@ -223,7 +223,7 @@ public class AmbientDevice {
       case 99:
         return Color.web("#FF1000");
       default:
-        return Color.web("#FF0000");
+        return Color.web("#A9A9A9");
     }
 
   }
