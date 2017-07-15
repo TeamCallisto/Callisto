@@ -19,7 +19,7 @@ public class AmbientController implements Initializable {
   @FXML
   private Sphere ambientSphere;
   @FXML
-  private Label waterFlowDate, waterFlowTitle, waterFlowTime, waterFlowOutflow, waterFlowInflow;
+  private Label waterFlowDate, waterFlowTitle, waterFlowTime, waterFlowOutflow, waterFlowInflow, waterFlowStatus;
   private AmbientDevice myDevice;
 
 
@@ -51,5 +51,6 @@ public class AmbientController implements Initializable {
     waterFlowOutflow.setText("Outflow: " + currentData.getOutflow());
     waterFlowInflow.setText("Inflow: " + currentData.getInflow());
     waterFlowTitle.setText("Kings River Basin Inflow and Outflow Data");
+    waterFlowStatus.setText("Status: " + currentData.getStatus());
   }
 }

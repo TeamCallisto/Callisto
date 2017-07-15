@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 public class WaterFlowData {
 
-  private String date, time;
+  private String date, time, status;
   private int outflow, inflow, overage, overageActual;
 
   public WaterFlowData() throws IOException {
@@ -49,14 +49,14 @@ public class WaterFlowData {
           if (m.group(3) == "-NR-") {
             outflow = 0;
           } else {
-            //outflow = Integer.parseInt(m.group(3));
-            outflow = 9000;
+            outflow = Integer.parseInt(m.group(3));
+            //outflow = 8000;
           }
           if (m.group(4) == "-NR-") {
             inflow = 0;
           } else {
-            //inflow = Integer.parseInt(m.group(4));
-            inflow = 9000;
+            inflow = Integer.parseInt(m.group(4));
+            //inflow = 9000;
           }
           date = m.group(1);
           time = m.group(2);
@@ -69,10 +69,19 @@ public class WaterFlowData {
   public int calculateOverflow() {
     if (outflow >= inflow) {
       overage = 0;
+      status = "Outflow is greater than inflow. No alert.";
     } else {
       overage = inflow - outflow;
       overageActual = overage;
       overage = overageActual / 50;
+      if(overage > 75) {
+        status = "Urgent! The inflow is significantly higher than outflow!";
+      } else if(overage > 40) {
+        status = "Overflow risk is immediate";
+      } else if(overage > 20) {
+        status = "Not urgent, but risk is increasing";
+      } else
+        status = "Low risk";
     }
     System.out.println(overageActual + " actual");
     System.out.println(overage + " overage");
@@ -87,6 +96,10 @@ public class WaterFlowData {
 
   public String getTime() {
     return time;
+  }
+
+  public String getStatus() {
+    return status;
   }
 
   public int getInflow() {
