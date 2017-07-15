@@ -50,7 +50,7 @@ public class WaterFlowData {
             outflow = 0;
           } else {
             //outflow = Integer.parseInt(m.group(3));
-            outflow = 4000;
+            outflow = 9000;
           }
           if (m.group(4) == "-NR-") {
             inflow = 0;
