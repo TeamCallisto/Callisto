@@ -9,7 +9,6 @@ public class AmbientDevice {
 
 
   //public constructor
-
   public AmbientDevice() {
     this.colorNumber = 0;
     this.brightnessNumber = 0;
@@ -25,6 +24,8 @@ public class AmbientDevice {
 
   public  Color getColor() {
     switch (colorNumber) {
+      case 0:
+        return Color.web("#00FF00");
       case 1:
         return Color.web("#00FF00");
       case 2:
@@ -229,17 +230,17 @@ public class AmbientDevice {
 
   public double getBrightness() {
     if (brightnessNumber <= 0) {
-      return 1.0;                           // indicates the device is off
+      return 12.0;                           // indicates the device is off
     } else if (brightnessNumber < 10) {
-      return 0.4;
+      return 10.0;
     } else if (brightnessNumber < 20) {
-      return 0.3;
+      return 8.0;
     } else if (brightnessNumber < 40) {
-      return 0.25;
+      return 6.0;
     } else if (brightnessNumber < 60) {
-      return 0.2;
+      return 4.0;
     } else if (brightnessNumber < 80) {
-      return 0.1;
-    } else return 0.0;
+      return 2.0;
+    } else return 1.0;
   }
 }
