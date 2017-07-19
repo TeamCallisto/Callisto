@@ -3,11 +3,11 @@ package sample.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.effect.ColorAdjust;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
 import sample.model.AmbientDevice;
+import sample.model.TemperatureData;
 import sample.model.WaterFlowData;
 
 import java.io.IOException;
@@ -50,5 +50,10 @@ public class AmbientController implements Initializable {
     waterFlowInflow.setText("Inflow: " + currentData.getInflow());
     waterFlowTitle.setText("Kings River Basin Inflow and Outflow Data");
     waterFlowStatus.setText("Status: " + currentData.getStatus());
+  }
+
+  public void handleTemperatureClick() throws IOException {
+    TemperatureData currentTemp = new TemperatureData();
+    currentTemp.setData();
   }
 }

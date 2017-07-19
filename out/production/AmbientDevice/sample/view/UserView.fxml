@@ -9,7 +9,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AmbientController">
    <children>
       <Button fx:id="waterflow" layoutX="570.0" layoutY="87.0" mnemonicParsing="false" onAction="#handleWaterFlowClick" text="WaterFlow" />
-      <Button fx:id="trafficdata" layoutX="569.0" layoutY="153.0" mnemonicParsing="false" text="TrafficData" />
+      <Button fx:id="temperaturedata" layoutX="569.0" layoutY="153.0" mnemonicParsing="false" onAction="#handleTemperatureClick" text="TemperatureData" />
       <Label layoutX="552.0" layoutY="48.0" prefHeight="17.0" prefWidth="137.0" text="Choose data source" />
       <Pane fx:id="ambientpane" layoutX="41.0" layoutY="57.0" prefHeight="313.0" prefWidth="331.0">
          <children>
