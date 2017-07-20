@@ -1,7 +1,8 @@
 # .gitignore standard file
 
 # Ignore IntelliJ Project files.
-*.iws
 *.iml
+.idea/
+.iml
 .idea/
 
