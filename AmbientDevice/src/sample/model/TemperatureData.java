@@ -5,6 +5,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 public class TemperatureData {
 
@@ -28,13 +31,21 @@ public class TemperatureData {
     assert data != null;
     Elements curTime = data.select("div.local-time");
     curTime = curTime.select("span");
-    time = curTime.text();
-
+    String myTime = curTime.text();
+    Pattern p = Pattern.compile("([0-9]{2}:[0-9]{2}\\s(PM|AM))\\s[A-Z]{2,4}\\son\\s([A-Z][a-z]{0,10}\\s[0-9]{1,2},\\s[0-9]{4})");
+    Matcher m = p.matcher(myTime);
+    System.out.print(myTime);
+    if (m.find()) {
+      System.out.print("here?");
+      time = m.group(1);
+      date = m.group(2);
+      System.out.print(time + " " + date);
+    }
     Elements temp = data.select("div[id=curTemp]");
     temp = temp.select("span.wx-value");
     String myString = temp.text();
     temperature = Double.parseDouble(myString);
-    System.out.println(time);
+    System.out.println(temperature);
   }
 
   public String getDate() {

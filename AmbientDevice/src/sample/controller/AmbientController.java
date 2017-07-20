@@ -18,7 +18,7 @@ public class AmbientController implements Initializable {
   @FXML
   private Sphere ambientSphere;
   @FXML
-  private Label waterFlowDate, waterFlowTitle, waterFlowTime, waterFlowOutflow, waterFlowInflow, waterFlowStatus;
+  private Label Date, Title, Time, Outflow, Inflow, Status;
   private AmbientDevice myDevice;
 
   /**
@@ -44,16 +44,18 @@ public class AmbientController implements Initializable {
     phongMaterial.setSpecularPower(myDevice.getBrightness());
     ambientSphere.setMaterial(phongMaterial);
 
-    waterFlowDate.setText("Date: " + currentData.getDate());
-    waterFlowTime.setText("Time: " + currentData.getTime());
-    waterFlowOutflow.setText("Outflow: " + currentData.getOutflow());
-    waterFlowInflow.setText("Inflow: " + currentData.getInflow());
-    waterFlowTitle.setText("Kings River Basin Inflow and Outflow Data");
-    waterFlowStatus.setText("Status: " + currentData.getStatus());
+    Date.setText("Date: " + currentData.getDate());
+    Time.setText("Time: " + currentData.getTime());
+    Outflow.setText("Outflow: " + currentData.getOutflow());
+    Inflow.setText("Inflow: " + currentData.getInflow());
+    Title.setText("Kings River Basin Inflow and Outflow Data");
+    Status.setText("Status: " + currentData.getStatus());
   }
 
   public void handleTemperatureClick() throws IOException {
-    TemperatureData currentTemp = new TemperatureData();
-    currentTemp.setData();
+    TemperatureData currentData = new TemperatureData();
+    currentData.setData();
+    Title.setText("Current Honoluu Temperature");
+    Time.setText("Time: " + currentData.getTime());
   }
 }

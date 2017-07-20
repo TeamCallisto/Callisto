@@ -65,7 +65,7 @@ public class WaterFlowData {
             //The following are test values to ensure ambient device is working properly
             //inflow = 0;
             //inflow = 6000;
-            //inflow = 7500;
+            //inflow = 950000;
             //inflow = 8000;
             //inflow = 100000;
             //inflow = 1;

@@ -18,12 +18,12 @@
          </children></Pane>
       <Pane layoutX="14.0" layoutY="352.0" prefHeight="197.0" prefWidth="632.0">
          <children>
-            <Label fx:id="waterFlowDate" layoutX="31.0" layoutY="20.0" />
-            <Label fx:id="waterFlowTime" layoutX="31.0" layoutY="60.0" />
-            <Label fx:id="waterFlowOutflow" layoutX="31.0" layoutY="100.0" />
-            <Label fx:id="waterFlowInflow" layoutX="31.0" layoutY="140.0" />
-           <Label fx:id="waterFlowStatus" layoutX="31.0" layoutY="180.0" />
+            <Label fx:id="Date" layoutX="31.0" layoutY="20.0" />
+            <Label fx:id="Time" layoutX="31.0" layoutY="60.0" />
+            <Label fx:id="Outflow" layoutX="31.0" layoutY="100.0" />
+            <Label fx:id="Inflow" layoutX="31.0" layoutY="140.0" />
+           <Label fx:id="Status" layoutX="31.0" layoutY="180.0" />
          </children></Pane>
-      <Label fx:id="waterFlowTitle" layoutX="15.0" layoutY="23.0"/>
+      <Label fx:id="Title" layoutX="15.0" layoutY="23.0"/>
    </children>
 </AnchorPane>
