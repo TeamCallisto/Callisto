@@ -4,6 +4,7 @@
 # Ignore IntelliJ Project files.
 *.iml
 .idea/
+.iml
 *.iws
 .out/
 /out/
