@@ -3,11 +3,11 @@ package sample.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.effect.ColorAdjust;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
 import sample.model.AmbientDevice;
+import sample.model.TempData;
 import sample.model.WaterFlowData;
 
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class AmbientController implements Initializable {
   @FXML
   private Sphere ambientSphere;
   @FXML
-  private Label waterFlowDate, waterFlowTitle, waterFlowTime, waterFlowOutflow, waterFlowInflow, waterFlowStatus;
+  private Label Date, Title, Time, Outflow, Inflow, Status;
   private AmbientDevice myDevice;
 
   /**
@@ -44,11 +44,20 @@ public class AmbientController implements Initializable {
     phongMaterial.setSpecularPower(myDevice.getBrightness());
     ambientSphere.setMaterial(phongMaterial);
 
-    waterFlowDate.setText("Date: " + currentData.getDate());
-    waterFlowTime.setText("Time: " + currentData.getTime());
-    waterFlowOutflow.setText("Outflow: " + currentData.getOutflow());
-    waterFlowInflow.setText("Inflow: " + currentData.getInflow());
-    waterFlowTitle.setText("Kings River Basin Inflow and Outflow Data");
-    waterFlowStatus.setText("Status: " + currentData.getStatus());
+    Date.setText("Date: " + currentData.getDate());
+    Time.setText("Time: " + currentData.getTime());
+    Outflow.setText("Outflow: " + currentData.getOutflow());
+    Inflow.setText("Inflow: " + currentData.getInflow());
+    Title.setText("Kings River Basin Inflow and Outflow Data");
+    Status.setText("Status: " + currentData.getStatus());
+  }
+
+  public void handleTemperatureClick() throws IOException {
+    TempData currentData = new TempData();
+    currentData.setData();
+    Title.setText("Current Honoluu Temperature");
+    Time.setText("Time: " + currentData.getTime());
+    Date.setText("Date: " + currentData.getDate());
+    Status.setText("Status: " + currentData.getStatus());
   }
 }
