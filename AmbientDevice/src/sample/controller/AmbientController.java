@@ -37,11 +37,8 @@ public class AmbientController implements Initializable {
     WaterFlowData currentData = new WaterFlowData();
     currentData.setData();
     myDevice.setColor(currentData.calculateOverflow());
-    myDevice.setBrightness(currentData.calculateOverflow());
     PhongMaterial phongMaterial = new PhongMaterial();
     phongMaterial.setDiffuseColor(myDevice.getColor());
-    phongMaterial.setSpecularColor(Color.YELLOW);
-    phongMaterial.setSpecularPower(myDevice.getBrightness());
     ambientSphere.setMaterial(phongMaterial);
 
     Date.setText("Date: " + currentData.getDate());
