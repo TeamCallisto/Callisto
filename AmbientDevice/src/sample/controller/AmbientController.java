@@ -50,8 +50,11 @@ public class AmbientController implements Initializable {
     Inflow.setText("Inflow: " + currentData.getInflow());
     Title.setText("Kings River Basin Inflow and Outflow Data");
     Status.setText("Status: " + currentData.getStatus());
+    Status.setLayoutY(180.0);
   }
-
+  /**
+   * Handler for TemperatureData button; sets the color of the ambient device to most recent values
+   */
   public void handleTemperatureClick() throws IOException {
     TempData currentData = new TempData();
     currentData.setData();
@@ -59,5 +62,9 @@ public class AmbientController implements Initializable {
     Time.setText("Time: " + currentData.getTime());
     Date.setText("Date: " + currentData.getDate());
     Status.setText("Status: " + currentData.getStatus());
+    Status.setLayoutY(140.0);
+    Inflow.setText("");
+    Outflow.setText("Current temp: " + currentData.getTemperature());
+
   }
 }
