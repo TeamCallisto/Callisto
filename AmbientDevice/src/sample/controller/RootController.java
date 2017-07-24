@@ -1,13 +1,7 @@
 package sample.controller;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 import sample.Main;
 
 import java.io.IOException;
@@ -25,15 +19,15 @@ public class RootController implements Initializable {
 
   }
   @FXML
-  public void handleAdjustClick() throws IOException {
+  private void handleSettingsClick() throws IOException {
     System.out.print("Gold!");
     main.showSettingsScene();
-
-      // these two of them return the same stage
-      // Swap screen
-   // primaryStage.setScene(new Scene(new Pane()));
-
-
   }
+
+  @FXML
+  private void goHome() {
+    main.showUserView();
+  }
+
 }
 

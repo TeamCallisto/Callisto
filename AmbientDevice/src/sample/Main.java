@@ -37,12 +37,12 @@ public class Main extends Application {
     }
   }
 
-  private void showUserView() {
+  public static void showUserView() {
     try {
       FXMLLoader loader;
       loader = new FXMLLoader();
       loader.setLocation(Main.class.getResource("view/UserView.fxml"));
-      AnchorPane userView = loader.load();
+      BorderPane userView = loader.load();
       rootLayout.setCenter(userView);
 
     } catch (IOException e) {
@@ -53,7 +53,7 @@ public class Main extends Application {
   public static void showSettingsScene() throws IOException {
     FXMLLoader loader = new FXMLLoader();
     loader.setLocation(Main.class.getResource("view/SettingsView.fxml"));
-    AnchorPane settingsView = loader.load();
+    BorderPane settingsView = loader.load();
     rootLayout.setCenter(settingsView);
 
   }
