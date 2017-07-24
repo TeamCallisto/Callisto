@@ -13,7 +13,7 @@ import java.io.IOException;
 public class Main extends Application {
 
   private Stage primaryStage;
-  private BorderPane rootLayout;
+  private static BorderPane rootLayout;
 
   @Override
   public void start(Stage primaryStage) throws Exception {
@@ -48,6 +48,14 @@ public class Main extends Application {
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
+
+  public static void showSettingsScene() throws IOException {
+    FXMLLoader loader = new FXMLLoader();
+    loader.setLocation(Main.class.getResource("view/SettingsView.fxml"));
+    AnchorPane settingsView = loader.load();
+    rootLayout.setCenter(settingsView);
+
   }
 
   public static void main(String[] args) {
