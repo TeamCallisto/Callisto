@@ -21,6 +21,12 @@
          <font>
             <Font name="Arial" size="18.0" />
          </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
       </Label>
    </top>
    <center>
@@ -63,7 +69,7 @@
                                        <opaqueInsets>
                                           <Insets left="15.0" />
                                        </opaqueInsets></Label>
-                                    <ChoiceBox fx:id="scaleBoxMin" prefWidth="150.0" onAction="#handleScaleMin" GridPane.columnIndex="1" />
+                                    <ChoiceBox fx:id="scaleBoxMin" onAction="#handleScaleMin" prefWidth="150.0" GridPane.columnIndex="1" />
                                     <Label text="**Overage is the how much more inflow is coming in than outflow" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                        <font>
                                           <Font name="System Italic" size="8.0" />
@@ -74,7 +80,7 @@
                                           <Insets />
                                        </GridPane.margin>
                                     </Label>
-                                    <ChoiceBox fx:id="scaleBoxMax" prefWidth="150.0" onAction="#handleScaleMax" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <ChoiceBox fx:id="scaleBoxMax" onAction="#handleScaleMax" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     <Button fx:id="scaleSave" mnemonicParsing="false" onAction="#handleScaleSave" prefHeight="27.0" prefWidth="70.0" text="Save" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                                  </children>
                                  <opaqueInsets>
@@ -99,10 +105,76 @@
           </Tab>
           <Tab text="Temperature Data">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="461.0" prefWidth="655.0" spacing="10.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <Label text="Adjust Scale">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="15.0" top="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Separator prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets left="15.0" />
+                                 </VBox.margin>
+                              </Separator>
+                              <GridPane prefHeight="107.0" prefWidth="635.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="444.0" minWidth="10.0" prefWidth="195.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="615.0" minWidth="10.0" prefWidth="364.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="551.0" minWidth="10.0" prefWidth="71.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label prefWidth="189.0" text=" Pick Temperature Minimum">
+                                       <opaqueInsets>
+                                          <Insets left="15.0" />
+                                       </opaqueInsets>
+                                    </Label>
+                                    <ChoiceBox fx:id="scaleBoxMinTemp" onAction="#handleScaleMinTemp" prefWidth="150.0" GridPane.columnIndex="1" />
+                                    <Label text="Pick Temperature Maximum" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <ChoiceBox fx:id="scaleBoxMaxTemp" onAction="#handleScaleMaxTemp" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Button fx:id="scaleSaveTemp" mnemonicParsing="false" onAction="#handleScaleTempSave" prefHeight="27.0" prefWidth="70.0" text="Save" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets left="15.0" />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="15.0" />
+                                 </VBox.margin>
+                              </GridPane>
+                              <Separator prefWidth="200.0">
+                                 <opaqueInsets>
+                                    <Insets left="15.0" />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="15.0" />
+                                 </VBox.margin>
+                              </Separator>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
             </content>
           </Tab>
         </tabs>
+         <BorderPane.margin>
+            <Insets left="10.0" />
+         </BorderPane.margin>
       </TabPane>
    </center>
 </BorderPane>
