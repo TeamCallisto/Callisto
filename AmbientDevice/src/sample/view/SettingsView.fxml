@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.SettingsController">
    <top>
       <Label alignment="TOP_LEFT" text="Settings" BorderPane.alignment="TOP_LEFT">
          <font>
@@ -20,7 +28,73 @@
         <tabs>
           <Tab text="WaterFlow Data">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="461.0" prefWidth="655.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <Label text="Adjust Scale">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="15.0" top="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Separator prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets left="15.0" />
+                                 </VBox.margin></Separator>
+                              <GridPane prefHeight="107.0" prefWidth="635.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="444.0" minWidth="10.0" prefWidth="174.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="615.0" minWidth="10.0" prefWidth="473.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="551.0" minWidth="10.0" prefWidth="71.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text=" Pick Overage Minimum">
+                                       <opaqueInsets>
+                                          <Insets left="15.0" />
+                                       </opaqueInsets></Label>
+                                    <ChoiceBox fx:id="scaleBoxMin" prefWidth="150.0" onAction="#handleScaleMin" GridPane.columnIndex="1" />
+                                    <Label text="**Overage is the how much more inflow is coming in than outflow" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Italic" size="8.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Pick Overage Maximum" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <ChoiceBox fx:id="scaleBoxMax" prefWidth="150.0" onAction="#handleScaleMax" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Button fx:id="scaleSave" mnemonicParsing="false" onAction="#handleScaleSave" prefHeight="27.0" prefWidth="70.0" text="Save" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets left="15.0" />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="15.0" />
+                                 </VBox.margin>
+                              </GridPane>
+                              <Separator prefWidth="200.0">
+                                 <opaqueInsets>
+                                    <Insets left="15.0" />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="15.0" />
+                                 </VBox.margin>
+                              </Separator>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
             </content>
           </Tab>
           <Tab text="Temperature Data">
