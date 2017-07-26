@@ -43,7 +43,7 @@ public class TempData {
     temp = temp.select("span.wx-value");
     String myString = temp.text();
     temperature = Double.parseDouble(myString);
-    //System.out.println(temperature);
+    System.out.println(temperature);
   }
 
   public String getDate() {
