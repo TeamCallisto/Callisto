@@ -55,6 +55,13 @@ public class AmbientController implements Initializable {
   public void handleTemperatureClick() throws IOException {
     TempData currentData = new TempData();
     currentData.setData();
+    myDevice.setColor(50);
+    PhongMaterial phongMaterial = new PhongMaterial();
+    phongMaterial.setDiffuseColor(myDevice.getBrightnessValue(currentData.getTemperature()));
+
+    //phongMaterial.setDiffuseColor(myDevice.getBrightnessValue(0));
+    ambientSphere.setMaterial(phongMaterial);
+
     Title.setText("Current Honoluu Temperature");
     Time.setText("Time: " + currentData.getTime());
     Date.setText("Date: " + currentData.getDate());

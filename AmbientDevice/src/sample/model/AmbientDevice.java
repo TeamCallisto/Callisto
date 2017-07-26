@@ -22,6 +22,15 @@ public class AmbientDevice {
     brightnessNumber = newBrightness;
   }
 
+  public Color getBrightnessValue(double value)
+  {
+    double grayScaleValue=((255*value)/100) ;   //Calculates the grayscale value from temperature. We have created the range here. So, that each change in temperature, will also effect the change in color
+
+    if(grayScaleValue>255)  //If range of grayscale value is exceeds from 255; 255 is the maximum gray level
+      grayScaleValue=255;   //So then we set it to 255. So, that it should not exceed
+    return Color.web(String.format("#%02x%02x%02x", (int)grayScaleValue,(int) grayScaleValue, (int)grayScaleValue));
+  }
+
   public  Color getColor() {
     switch (colorNumber) {
       case 0:
