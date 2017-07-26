@@ -1,0 +1,22 @@
+
+# .gitignore standard file for ICS Software Engineering Meteor Development.
+
+# Ignore IntelliJ Project files.
+*.iml
+.idea/
+.iml
+*.iws
+.out/
+/out/
+
+.idea/jsLibraryMappings.xml
+
+.idea/jsLibraryMappings.xml
+
+.idea/misc.xml
+
+.idea/modules.xml
+
+.idea/vcs.xml
+
+.idea/workspace.xml

@@ -37,6 +37,9 @@ public class AmbientController implements Initializable {
     WaterFlowData currentData = new WaterFlowData();
     currentData.setData();
     myDevice.setColor(currentData.calculateOverflow());
+
+    myDevice.setColor(60);
+
     PhongMaterial phongMaterial = new PhongMaterial();
     phongMaterial.setDiffuseColor(myDevice.getColor());
     ambientSphere.setMaterial(phongMaterial);
@@ -55,7 +58,14 @@ public class AmbientController implements Initializable {
   public void handleTemperatureClick() throws IOException {
     TempData currentData = new TempData();
     currentData.setData();
-    Title.setText("Current Honoluu Temperature");
+    myDevice.setColor(50);
+    PhongMaterial phongMaterial = new PhongMaterial();
+    phongMaterial.setDiffuseColor(myDevice.getBrightnessValue(currentData.getTemperature()));
+
+    //phongMaterial.setDiffuseColor(myDevice.getBrightnessValue(0));
+    ambientSphere.setMaterial(phongMaterial);
+
+    Title.setText("Current Honolulu Temperature");
     Time.setText("Time: " + currentData.getTime());
     Date.setText("Date: " + currentData.getDate());
     Status.setText("Status: " + currentData.getStatus());
