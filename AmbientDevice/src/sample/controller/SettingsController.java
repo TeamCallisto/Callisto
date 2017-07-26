@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 
 public class SettingsController implements Initializable{
 
-  ObservableList<Integer> scale = FXCollections.observableArrayList(0, 50, 100, 300, 500, 1000, 2000, 4000);
+  ObservableList<Integer> scale = FXCollections.observableArrayList(50, 100, 300, 500, 1000, 2000, 4000, 5000, 6000, 8000, 10000);
   ObservableList<Integer> scaleMinTemp = FXCollections.observableArrayList(50, 55, 60, 65, 70);
   ObservableList<Integer> scaleMaxTemp = FXCollections.observableArrayList(75, 80, 85, 90, 95, 100);
   @FXML
