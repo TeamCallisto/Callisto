@@ -37,6 +37,9 @@ public class AmbientController implements Initializable {
     WaterFlowData currentData = new WaterFlowData();
     currentData.setData();
     myDevice.setColor(currentData.calculateOverflow());
+
+    myDevice.setColor(60);
+
     PhongMaterial phongMaterial = new PhongMaterial();
     phongMaterial.setDiffuseColor(myDevice.getColor());
     ambientSphere.setMaterial(phongMaterial);
@@ -62,7 +65,7 @@ public class AmbientController implements Initializable {
     //phongMaterial.setDiffuseColor(myDevice.getBrightnessValue(0));
     ambientSphere.setMaterial(phongMaterial);
 
-    Title.setText("Current Honoluu Temperature");
+    Title.setText("Current Honolulu Temperature");
     Time.setText("Time: " + currentData.getTime());
     Date.setText("Date: " + currentData.getDate());
     Status.setText("Status: " + currentData.getStatus());

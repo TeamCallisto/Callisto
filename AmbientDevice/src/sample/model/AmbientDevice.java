@@ -32,6 +32,37 @@ public class AmbientDevice {
   }
 
   public  Color getColor() {
+    int colorValue=100-colorNumber; ///Color range is from Red to yellow to green. But we want Green to yellow to red. So, i subtract from 100 to get the reverse
+    int greenMaximum = 220;
+    int redMaximum = 220;
+
+    //Red, Green, Blue variables are used because there are 3 channels of color. So, we can change value of these channels to get different colors
+
+    int redValue = 0;
+    int greenValue = 0;
+    int blueValue = 0;
+    int minimumColorValue=0;
+    int maximumColorValue=99;
+
+    if (colorValue < maximumColorValue/2)
+    {
+      redValue = redMaximum;
+      greenValue = Math.round((colorValue/(maximumColorValue/2))*greenMaximum);
+    }
+    else
+    {
+      greenValue = greenMaximum;
+      redValue = Math.round((1-((colorValue-(maximumColorValue/2))/(maximumColorValue/2)))*redMaximum);
+    }
+
+    ///Converting the R,G,B value to Hex Code string
+    String hex = String.format("#%02x%02x%02x", redValue, greenValue, blueValue);
+
+
+
+    return Color.web(hex);
+
+    /*
     switch (colorNumber) {
       case 0:
         return Color.web("#00FF00");
@@ -234,6 +265,8 @@ public class AmbientDevice {
       default:
         return Color.web("#A9A9A9");
     }
+
+    */
 
   }
 
