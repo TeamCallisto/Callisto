@@ -13,38 +13,29 @@ import java.util.ResourceBundle;
 
 public class SettingsController implements Initializable{
 
-  ObservableList<Integer> scaleMin = FXCollections.observableArrayList(0, 50, 100, 300, 500, 1000, 2000, 4000);
-  ObservableList<Integer> scaleMax = FXCollections.observableArrayList(5000, 6000, 7000, 8000, 9000, 10000);
+  ObservableList<Integer> scale = FXCollections.observableArrayList(0, 50, 100, 300, 500, 1000, 2000, 4000);
   ObservableList<Integer> scaleMinTemp = FXCollections.observableArrayList(50, 55, 60, 65, 70);
   ObservableList<Integer> scaleMaxTemp = FXCollections.observableArrayList(75, 80, 85, 90, 95, 100);
   @FXML
-  private ChoiceBox scaleBoxMin, scaleBoxMax, scaleBoxMinTemp, scaleBoxMaxTemp;
+  private ChoiceBox scaleBox,scaleBoxMinTemp, scaleBoxMaxTemp;
   private WaterFlowData waterFlowData;
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    scaleBoxMin.setItems(scaleMin);
-    scaleBoxMax.setItems(scaleMax);
+    scaleBox.setItems(scale);
     scaleBoxMinTemp.setItems(scaleMinTemp);
     scaleBoxMaxTemp.setItems(scaleMaxTemp);
   }
 
-  public void handleScaleMin() {
-    scaleBoxMin.setValue(scaleBoxMin.getValue());
-  }
-  public void handleScaleMax() {
-    scaleBoxMax.setValue(scaleBoxMax.getValue());
-  }
-  public void handleScaleMinTemp() {
-    scaleBoxMinTemp.setValue(scaleBoxMinTemp.getValue());
+  public void handleScale() {
+    scaleBox.setValue(scaleBox.getValue());
   }
   public void handleScaleMaxTemp() {
     scaleBoxMaxTemp.setValue(scaleBoxMaxTemp.getValue());
   }
   public void handleScaleSave() throws IOException {
     waterFlowData = new WaterFlowData();
-    waterFlowData.setScaleMax((Integer) scaleBoxMax.getValue());
-    waterFlowData.setScaleMin((Integer) scaleBoxMin.getValue());
+    waterFlowData.setScale((Integer) scaleBox.getValue());
   }
   public void handleScaleTempSave() {
 

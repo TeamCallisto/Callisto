@@ -14,7 +14,7 @@ public class WaterFlowData {
 
   private String date, time, status;
   private int outflow, inflow, overage, overageActual;
-  private static Integer scaleMin, scaleMax;
+  private static Integer scale;
 
   public WaterFlowData() throws IOException {
     this.date = "";
@@ -22,18 +22,12 @@ public class WaterFlowData {
     this.outflow = 0;
     this.inflow = 0;
     this.overage = 0;
-    if(scaleMin == null) {
-      scaleMin = 0;
-    }
-    if(scaleMax == null) {
-      scaleMax = 5000;
+    if(scale == null) {
+      scale = 5000;
     }
   }
-  public void setScaleMin(Integer newMin) {
-    scaleMin = newMin;
-  }
-  public void setScaleMax(Integer newMax) {
-    scaleMax = newMax;
+  public void setScale(Integer newScale) {
+    scale = newScale;
   }
 
   public void setData() {
@@ -62,7 +56,7 @@ public class WaterFlowData {
           if (Objects.equals(m.group(3), "-NR-")) {
             outflow = 0;
           } else {
-            outflow = Integer.parseInt(m.group(3));
+            //outflow = Integer.parseInt(m.group(3));
             //The following are test values to ensure ambient device is working properly
             //outflow = 0;
             outflow = 6000;
@@ -75,7 +69,7 @@ public class WaterFlowData {
           if (Objects.equals(m.group(4), "-NR-")) {
             inflow = 0;
           } else {
-            inflow = Integer.parseInt(m.group(4));
+            //inflow = Integer.parseInt(m.group(4));
             //The following are test values to ensure ambient device is working properly
             //inflow = 0;
             //inflow = 6000;
@@ -92,16 +86,14 @@ public class WaterFlowData {
     }
   }
   public int calculateOverflow() {
-    int scale = 0;
+    int scaleTemp = 0;
     if (outflow >= inflow) {
       overage = 0;
       status = "Outflow is greater than inflow. No alert.";
     } else {
-      scale = scaleMax - scaleMin;
-      scale = scale / 100;
+      scaleTemp = scale / 100;
       overage = inflow - outflow;
-      overageActual = overage;
-      overage = overageActual / scale;
+      overage = overage / scaleTemp;
       if(overage > 75) {
         status = "Urgent! The inflow is significantly higher than outflow!";
       } else if(overage > 40) {
@@ -128,7 +120,7 @@ public class WaterFlowData {
   public int getOutflow() {
     return outflow;
   }
-  public Integer getScaleMax() { return scaleMax; }
-  public Integer getScaleMin() { return scaleMin; }
-}
+  public Integer getScale() { return scale; }}
+
+
 

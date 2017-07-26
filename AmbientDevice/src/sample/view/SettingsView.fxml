@@ -69,18 +69,12 @@
                                        <opaqueInsets>
                                           <Insets left="15.0" />
                                        </opaqueInsets></Label>
-                                    <ChoiceBox fx:id="scaleBoxMin" onAction="#handleScaleMin" prefWidth="150.0" GridPane.columnIndex="1" />
+                                    <ChoiceBox fx:id="scaleBox" onAction="#handleScale" prefWidth="150.0" GridPane.columnIndex="1" />
                                     <Label text="**Overage is the how much more inflow is coming in than outflow" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                        <font>
                                           <Font name="System Italic" size="8.0" />
                                        </font>
                                     </Label>
-                                    <Label text="Pick Overage Maximum" GridPane.rowIndex="1">
-                                       <GridPane.margin>
-                                          <Insets />
-                                       </GridPane.margin>
-                                    </Label>
-                                    <ChoiceBox fx:id="scaleBoxMax" onAction="#handleScaleMax" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     <Button fx:id="scaleSave" mnemonicParsing="false" onAction="#handleScaleSave" prefHeight="27.0" prefWidth="70.0" text="Save" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                                  </children>
                                  <opaqueInsets>
@@ -142,7 +136,7 @@
                                           <Insets left="15.0" />
                                        </opaqueInsets>
                                     </Label>
-                                    <ChoiceBox fx:id="scaleBoxMinTemp" onAction="#handleScaleMinTemp" prefWidth="150.0" GridPane.columnIndex="1" />
+                                    <ChoiceBox fx:id="scaleBoxMinTemp" prefWidth="150.0" GridPane.columnIndex="1" />
                                     <Label text="Pick Temperature Maximum" GridPane.rowIndex="1">
                                        <GridPane.margin>
                                           <Insets />
