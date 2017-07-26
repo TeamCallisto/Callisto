@@ -20,6 +20,7 @@ public class AmbientController implements Initializable {
   @FXML
   private Label Date, Title, Time, Outflow, Inflow, Status;
   private AmbientDevice myDevice;
+  private WaterFlowData currentData;
 
   /**
    * This code initializes the AmbientDevice display to the default values
@@ -34,7 +35,7 @@ public class AmbientController implements Initializable {
    * Handler for WaterFlowData button; sets the color of the ambient device to most recent values
    */
   public void handleWaterFlowClick() throws IOException {
-    WaterFlowData currentData = new WaterFlowData();
+    currentData = new WaterFlowData();
     currentData.setData();
     myDevice.setColor(currentData.calculateOverflow());
 
