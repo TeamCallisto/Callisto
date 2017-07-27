@@ -10,7 +10,7 @@ class AmbientDeviceTest {
 //    myDevice = new AmbientDevice();
 //
 //    myDevice.setColor(1);
-//    assertEquals("0x00ff00ff", myDevice.getColor());
+//   assertEquals("0x00ff00ff", myDevice.getColor());
 //
 //    myDevice.setColor(50);
 //    assertEquals("#E0FF00", myDevice.getColor());

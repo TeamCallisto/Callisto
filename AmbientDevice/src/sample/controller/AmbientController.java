@@ -27,7 +27,7 @@ public class AmbientController implements Initializable {
    */
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    ambientSphere.setRadius(95);
+    ambientSphere.setRadius(85);
     myDevice = new AmbientDevice();
   }
 

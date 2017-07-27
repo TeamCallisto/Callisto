@@ -56,10 +56,10 @@ public class WaterFlowData {
           if (Objects.equals(m.group(3), "-NR-")) {
             outflow = 0;
           } else {
-            //outflow = Integer.parseInt(m.group(3));
+            outflow = Integer.parseInt(m.group(3));
             //The following are test values to ensure ambient device is working properly
             //outflow = 0;
-            outflow = 6000;
+            //outflow = 6000;
             //outflow = 7500;
             //outflow = 8000;
             //outflow = 1000000;
@@ -69,11 +69,11 @@ public class WaterFlowData {
           if (Objects.equals(m.group(4), "-NR-")) {
             inflow = 0;
           } else {
-            //inflow = Integer.parseInt(m.group(4));
+            inflow = Integer.parseInt(m.group(4));
             //The following are test values to ensure ambient device is working properly
             //inflow = 0;
             //inflow = 6000;
-            inflow = 7500;
+            //inflow = 7500;
             //inflow = 8000;
             //inflow = 100000;
             //inflow = 1;

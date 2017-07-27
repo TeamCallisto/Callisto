@@ -36,7 +36,6 @@ public class Main extends Application {
       e.printStackTrace();
     }
   }
-
   public static void showUserView() {
     try {
       FXMLLoader loader;
@@ -49,7 +48,6 @@ public class Main extends Application {
       e.printStackTrace();
     }
   }
-
   public static void showSettingsScene() throws IOException {
     FXMLLoader loader = new FXMLLoader();
     loader.setLocation(Main.class.getResource("view/SettingsView.fxml"));
@@ -57,7 +55,6 @@ public class Main extends Application {
     rootLayout.setCenter(settingsView);
 
   }
-
   public static void main(String[] args) {
     launch(args);
   }
