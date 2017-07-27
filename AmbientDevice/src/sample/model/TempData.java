@@ -11,17 +11,32 @@ import java.util.regex.Pattern;
 
 public class TempData {
 
+  //Initialize values
   private String date, time, status;
-  private double temperature;
+  private double actualTemperature;
+  private static Integer min, max;
 
+  //Constructor
   public TempData() throws IOException {
     this.date = "";
     this.time = "";
-    this.temperature = 0.0;
+    this.actualTemperature = 0.0;
+    if(min == null) {
+      min = 50;
+    }
+    if(max == null) {
+      max = 100;
+    }
+  }
+  public void setMin(Integer newMin) {
+    min = newMin;
+  }
+  public void setMax(Integer newMax) {
+    max = newMax;
   }
 
+  //Method to grab values from the external website and set the values for the object
   public void setData() {
-     /* Grab data from website with Jsoup webscrapping library */
     Document data = null;
     try {
       data = Jsoup.connect("https://www.wunderground.com/us/hi/honolulu").timeout(6000).get();
@@ -42,9 +57,37 @@ public class TempData {
     Elements temp = data.select("div[id=curTemp]");
     temp = temp.select("span.wx-value");
     String myString = temp.text();
-    temperature = Double.parseDouble(myString);
-    System.out.println(temperature);
+    actualTemperature = Double.parseDouble(myString);
+    System.out.println(actualTemperature);
   }
+  public int calculateTempBrightnessValue() {
+    double scaleTemp;
+    double scale;
+    double tempDifference;
+    System.out.println(actualTemperature + " " + max);
+    if(actualTemperature < min) {
+      status = "Below normal!";
+      return 0;
+    } else if(actualTemperature > max ) {
+      status = "Urgent! Its hot!";
+      return 99;
+    } else {
+      tempDifference = max - min;
+      scale = tempDifference / 100;
+      scaleTemp = actualTemperature - min;
+      scaleTemp = scaleTemp / scale;
+      if(scaleTemp > 75) {
+        status = "Urgent! Its hot!";
+      } else if(scaleTemp > 40) {
+        status = "Average Temp range";
+      } else if(scaleTemp > 20) {
+        status = "Its cool outside";
+      } else
+        status = "Below normal!";
+    }
+      return (int) scaleTemp;
+    }
+
 
   public String getDate() {
     return date;
@@ -59,6 +102,7 @@ public class TempData {
   }
 
   public double getTemperature() {
-    return temperature;
+    return actualTemperature;
   }
+
 }

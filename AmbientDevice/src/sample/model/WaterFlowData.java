@@ -86,14 +86,14 @@ public class WaterFlowData {
     }
   }
   public int calculateOverflow() {
-    int scaleTemp = 0;
+    int scaleVal = 0;
     if (outflow >= inflow) {
       overage = 0;
       status = "Outflow is greater than inflow. No alert.";
     } else {
-      scaleTemp = scale / 100;
+      scaleVal = scale / 100;
       overage = inflow - outflow;
-      overage = overage / scaleTemp;
+      overage = overage / scaleVal;
       if(overage > 75) {
         status = "Urgent! The inflow is significantly higher than outflow!";
       } else if(overage > 40) {
