@@ -60,6 +60,7 @@ public class TempData {
     actualTemperature = Double.parseDouble(myString);
     System.out.println(actualTemperature);
   }
+
   public int calculateTempBrightnessValue() {
     double scaleTemp;
     double scale;
