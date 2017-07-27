@@ -44,20 +44,31 @@ public class AmbientDevice {
     int minimumColorValue=0;
     int maximumColorValue=99;
 
-    if (colorValue < maximumColorValue/2)
+    if (colorValue > 50)
     {
-      redValue = redMaximum;
-      greenValue = Math.round((colorValue/(maximumColorValue/2))*greenMaximum);
+      redValue = 255;
+      // greenValue = (int)(255*colorValue/50)+30;
+      greenValue = Math.abs( (int)(255*(colorValue-50)/50)+30);
+
+
+      greenValue=255-greenValue;
+
+      if(greenValue<0)
+        greenValue=0;
     }
     else
     {
-      greenValue = greenMaximum;
-      redValue = Math.round((1-((colorValue-(maximumColorValue/2))/(maximumColorValue/2)))*redMaximum);
+      greenValue = 255;
+      redValue =  Math.abs((int)(255*(colorValue-50)/50)+30);
+
+
+      redValue=255-redValue;
+      if(redValue<0)
+        redValue=0;
     }
 
     ///Converting the R,G,B value to Hex Code string
     String hex = String.format("#%02x%02x%02x", redValue, greenValue, blueValue);
-
 
 
     return Color.web(hex);
