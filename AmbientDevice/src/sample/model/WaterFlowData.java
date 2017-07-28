@@ -29,6 +29,12 @@ public class WaterFlowData {
   public void setScale(Integer newScale) {
     scale = newScale;
   }
+  public void setInflow(int newInflow) {
+    this.inflow = newInflow;
+  }
+  public void setOutflow(int newOutflow) {
+    this.outflow = newOutflow;
+  }
 
   public void setData() {
 
@@ -57,27 +63,11 @@ public class WaterFlowData {
             outflow = 0;
           } else {
             outflow = Integer.parseInt(m.group(3));
-            //The following are test values to ensure ambient device is working properly
-            //outflow = 0;
-            //outflow = 6000;
-            //outflow = 7500;
-            //outflow = 8000;
-            //outflow = 1000000;
-            //outflow = 1;
-            //outflow = 9500;
           }
           if (Objects.equals(m.group(4), "-NR-")) {
             inflow = 0;
           } else {
             inflow = Integer.parseInt(m.group(4));
-            //The following are test values to ensure ambient device is working properly
-            //inflow = 0;
-            //inflow = 6000;
-            //inflow = 7500;
-            //inflow = 8000;
-            //inflow = 100000;
-            //inflow = 1;
-            //inflow = 9500;
           }
           date = m.group(1);
           time = m.group(2);

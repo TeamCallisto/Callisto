@@ -34,6 +34,9 @@ public class TempData {
   public void setMax(Integer newMax) {
     max = newMax;
   }
+  public void setActualTemperature(double newTemp) {
+    this.actualTemperature = newTemp;
+  }
 
   //Method to grab values from the external website and set the values for the object
   public void setData() {
@@ -105,5 +108,9 @@ public class TempData {
   public double getTemperature() {
     return actualTemperature;
   }
+
+  public Integer getMin() { return min; }
+
+  public Integer getMax() { return max; }
 
 }

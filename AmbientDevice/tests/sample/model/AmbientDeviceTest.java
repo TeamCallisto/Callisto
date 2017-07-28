@@ -1,44 +1,40 @@
 package sample.model;
+    import javafx.scene.paint.Color;
+    import javafx.scene.paint.PhongMaterial;
     import org.junit.jupiter.api.Test;
+
+    import java.io.IOException;
 
     import static org.junit.jupiter.api.Assertions.*;
 
+//Class to test for critical methods in AmbientDevice class
 class AmbientDeviceTest {
   @Test
   void getColor() {
-//    AmbientDevice myDevice;
-//    myDevice = new AmbientDevice();
-//
-//    myDevice.setColor(1);
-//   assertEquals("0x00ff00ff", myDevice.getColor());
-//
-//    myDevice.setColor(50);
-//    assertEquals("#E0FF00", myDevice.getColor());
-//
-//    myDevice.setColor(100);
-//    assertEquals("#A9A9A9", myDevice.getColor());
-//
-//    myDevice.setColor(0);
-//    assertEquals("#00FF00", myDevice.getColor());
-
-  }
-  @Test
-  void getBrightness() {
     AmbientDevice myDevice;
     myDevice = new AmbientDevice();
 
-    myDevice.setBrightness(1);
+    //Check to ensure the default values are correct
+    assertEquals(Color.web("0x1eff00ff"), myDevice.getColor());
 
-    assertEquals(10.0, myDevice.getBrightness());
 
-    myDevice.setBrightness(50);
-    assertEquals(4.0, myDevice.getBrightness());
+    //Set colors to multiple values to test correct output
+    myDevice.setColor(0);
+    assertEquals(Color.web("0x1eff00ff"), myDevice.getColor());
+    myDevice.setColor(10);
+    assertEquals(Color.web("0x51ff00ff"), myDevice.getColor());
+    myDevice.setColor(50);
+    assertEquals(Color.web("0xffe100ff"), myDevice.getColor());
+    myDevice.setColor(75);
+    assertEquals(Color.web("0xff6200ff"), myDevice.getColor());
+    myDevice.setColor(99);
+    assertEquals(Color.web("0xff0000ff"), myDevice.getColor());
 
-    myDevice.setBrightness(100);
-    assertEquals(1.0, myDevice.getBrightness());
-
-    myDevice.setBrightness(0);
-    assertEquals(12.0, myDevice.getBrightness());
+  }
+  @Test
+  void getBrightness() throws IOException {
+    AmbientDevice myDevice;
+    myDevice = new AmbientDevice();
 
   }
 }
