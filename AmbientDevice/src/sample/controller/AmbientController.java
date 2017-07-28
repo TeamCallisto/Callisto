@@ -3,7 +3,6 @@ package sample.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
 import sample.model.AmbientDevice;
@@ -73,6 +72,5 @@ public class AmbientController implements Initializable {
     Status.setLayoutY(140.0);
     Inflow.setText("");
     Outflow.setText("Current temp: " + currentData.getTemperature());
-
   }
 }

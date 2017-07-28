@@ -136,7 +136,7 @@
                                           <Insets left="15.0" />
                                        </opaqueInsets>
                                     </Label>
-                                    <ChoiceBox fx:id="scaleBoxMinTemp" prefWidth="150.0" GridPane.columnIndex="1" />
+                                    <ChoiceBox fx:id="scaleBoxMinTemp" onAction="#handleScaleMinTemp" prefWidth="150.0" GridPane.columnIndex="1" />
                                     <Label text="Pick Temperature Maximum" GridPane.rowIndex="1">
                                        <GridPane.margin>
                                           <Insets />
