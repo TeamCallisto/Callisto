@@ -39,8 +39,7 @@ public class AmbientController implements Initializable {
     currentData.setData();
     myDevice.setColor(currentData.calculateOverflow());
 
-    //myDevice.setColor(99);
-
+    myDevice.setColor(99);
 
     PhongMaterial phongMaterial = new PhongMaterial();
     phongMaterial.setDiffuseColor(myDevice.getColor());

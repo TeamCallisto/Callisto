@@ -21,7 +21,7 @@ public class WaterFlowData {
     this.time = "";
     this.outflow = 0;
     this.inflow = 0;
-    this.overage = 0;
+    this.overage = 10;
     if(scale == null) {
       scale = 5000;
     }
@@ -88,7 +88,7 @@ public class WaterFlowData {
   public int calculateOverflow() {
     int scaleVal = 0;
     if (outflow >= inflow) {
-      overage = 0;
+      overage = 10;
       status = "Outflow is greater than inflow. No alert.";
     } else {
       scaleVal = scale / 100;

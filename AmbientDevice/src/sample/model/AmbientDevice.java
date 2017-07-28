@@ -32,7 +32,7 @@ public class AmbientDevice {
   }
 
   public  Color getColor() {
-    int colorValue=100-colorNumber; ///Color range is from Red to yellow to green. But we want Green to yellow to red. So, i subtract from 100 to get the reverse
+    int colorValue=100-colorNumber; //Color range is from Red to yellow to green. But we want Green to yellow to red. So, i subtract from 100 to get the reverse
     int greenMaximum = 220;
     int redMaximum = 220;
 
@@ -46,25 +46,24 @@ public class AmbientDevice {
 
     if (colorValue > 50)
     {
-      redValue = 255;
+      greenValue = 255;
       // greenValue = (int)(255*colorValue/50)+30;
-      greenValue = Math.abs( (int)(255*(colorValue-50)/50)+30);
+      redValue = Math.abs( (int)(255*(colorValue-50)/50)-30);
 
-
-      greenValue=255-greenValue;
+      redValue=255-redValue;
 
       if(greenValue<0)
-        greenValue=0;
+        redValue=0;
     }
     else
     {
-      greenValue = 255;
-      redValue =  Math.abs((int)(255*(colorValue-50)/50)+30);
+      redValue = 255;
+      greenValue =  Math.abs((int)(255*(colorValue-50)/50)-30);
 
 
-      redValue=255-redValue;
-      if(redValue<0)
-        redValue=0;
+      greenValue=255-greenValue;
+      if(greenValue<0)
+        greenValue=0;
     }
 
     ///Converting the R,G,B value to Hex Code string
