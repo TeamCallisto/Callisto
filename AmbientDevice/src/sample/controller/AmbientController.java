@@ -73,4 +73,25 @@ public class AmbientController implements Initializable {
     Inflow.setText("");
     Outflow.setText("Current temp: " + currentData.getTemperature());
   }
+
+  public void handleIncidentClick() throws IOException {
+    currentData = new IncidentData();
+    currentData.setData();
+    myDevice.setColor(currentData.calculateTrafficStatus());
+
+    //myDevice.setColor(25);
+
+    PhongMaterial phongMaterial = new PhongMaterial();
+    phongMaterial.setDiffuseColor(myDevice.getColor());
+    ambientSphere.setMaterial(phongMaterial);
+
+    Date.setText("Date: " + currentData.getDate());
+    Time.setText("Time: " + currentData.getTime());
+    Outflow.setText("Incident: " + currentData.getIncident());
+    Inflow.setText("Facility: " + currentData.getFacility());
+    Title.setText("Current Incidents and Traffic on Oahu");
+    Status.setText("Description: " + currentData.getDescription());
+    Status.setLayoutY(180.0);
+  }
+
 }

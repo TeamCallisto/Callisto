@@ -32,7 +32,7 @@ public class AmbientDevice {
   }
 
   public  Color getColor() {
-    int colorValue=100-colorNumber; //Color range is from Red to yellow to green. But we want Green to yellow to red. So, i subtract from 100 to get the reverse
+    int colorValue=100-colorNumber; //Color range is from Red to yellow to green. But we want Green to yellow to red. So, we subtract from 100 to get the reverse
     int greenMaximum = 220;
     int redMaximum = 220;
 
