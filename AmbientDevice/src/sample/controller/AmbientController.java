@@ -3,7 +3,6 @@ package sample.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Sphere;
 import sample.model.AmbientDevice;
@@ -39,7 +38,7 @@ public class AmbientController implements Initializable {
     currentData.setData();
     myDevice.setColor(currentData.calculateOverflow());
 
-    myDevice.setColor(99);
+    //myDevice.setColor(25);
 
     PhongMaterial phongMaterial = new PhongMaterial();
     phongMaterial.setDiffuseColor(myDevice.getColor());
@@ -73,6 +72,5 @@ public class AmbientController implements Initializable {
     Status.setLayoutY(140.0);
     Inflow.setText("");
     Outflow.setText("Current temp: " + currentData.getTemperature());
-
   }
 }

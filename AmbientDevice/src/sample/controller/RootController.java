@@ -8,9 +8,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by chasepugh on 7/21/17.
- */
 public class RootController implements Initializable {
   private Main main;
 
@@ -20,7 +17,6 @@ public class RootController implements Initializable {
   }
   @FXML
   private void handleSettingsClick() throws IOException {
-    System.out.print("Gold!");
     main.showSettingsScene();
   }
 
