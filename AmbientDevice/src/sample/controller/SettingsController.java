@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import sample.model.TempData;
 import sample.model.WaterFlowData;
 
@@ -22,6 +23,8 @@ public class SettingsController implements Initializable{
   private ChoiceBox scaleBox,scaleBoxMinTemp, scaleBoxMaxTemp;
   private WaterFlowData waterFlowData;
   private TempData tempData;
+  @FXML
+  private Label savedLabelWaterflow, savedLabelTemperature;
 
   //Initialize values in UI choice boxes
   @Override
@@ -47,11 +50,13 @@ public class SettingsController implements Initializable{
   public void handleScaleSave() throws IOException {
     waterFlowData = new WaterFlowData();
     waterFlowData.setScale((Integer) scaleBox.getValue());
+    savedLabelWaterflow.setText("Saved");
   }
   public void handleScaleTempSave() throws IOException {
     tempData = new TempData();
     tempData.setMax((Integer) scaleBoxMaxTemp.getValue());
     tempData.setMin((Integer) scaleBoxMinTemp.getValue());
+    savedLabelTemperature.setText("Saved");
   }
 
 }

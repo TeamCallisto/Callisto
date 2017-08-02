@@ -17,7 +17,7 @@ public class AmbientController implements Initializable {
   @FXML
   private Sphere ambientSphere;
   @FXML
-  private Label Date, Title, Time, Outflow, Inflow, Status;
+  private Label Date, Title, Time, Outflow, Inflow, Status, errorLabel;
   private AmbientDevice myDevice;
   private WaterFlowData currentData;
 
@@ -38,8 +38,6 @@ public class AmbientController implements Initializable {
     currentData.setData();
     myDevice.setColor(currentData.calculateOverflow());
 
-    myDevice.setColor(99);
-
     PhongMaterial phongMaterial = new PhongMaterial();
     phongMaterial.setDiffuseColor(myDevice.getColor());
     ambientSphere.setMaterial(phongMaterial);
@@ -51,6 +49,7 @@ public class AmbientController implements Initializable {
     Title.setText("Kings River Basin Inflow and Outflow Data");
     Status.setText("Status: " + currentData.getStatus());
     Status.setLayoutY(180.0);
+    errorLabel.setText(currentData.getErrorStatus());
   }
   /**
    * Handler for TemperatureData button; sets the color of the ambient device to most recent values
@@ -72,5 +71,7 @@ public class AmbientController implements Initializable {
     Status.setLayoutY(140.0);
     Inflow.setText("");
     Outflow.setText("Current temp: " + currentData.getTemperature());
+    Status.setLayoutY(180.0);
+    errorLabel.setText("");
   }
 }
