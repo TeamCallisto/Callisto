@@ -33,6 +33,7 @@ public class AmbientController implements Initializable {
 
   private AmbientDevice myDevice;
   private WaterFlowData currentData;
+  public TableView<Traffic> table;
 
   /**
    * This code initializes the AmbientDevice display to the default values
@@ -47,6 +48,9 @@ public class AmbientController implements Initializable {
    * Handler for WaterFlowData button; sets the color of the ambient device to most recent values
    */
   public void handleWaterFlowClick() throws IOException {
+    if(table != null) {
+      table.setVisible(false);
+    }
     currentData = new WaterFlowData();
     currentData.setData();
     myDevice.setColor(currentData.calculateOverflow());
@@ -68,6 +72,9 @@ public class AmbientController implements Initializable {
    * Handler for TemperatureData button; sets the color of the ambient device to most recent values
    */
   public void handleTemperatureClick() throws IOException {
+    if(table != null) {
+      table.setVisible(false);
+    }
     TempData currentData = new TempData();
     currentData.setData();
     myDevice.setColor(100);
@@ -95,7 +102,7 @@ public class AmbientController implements Initializable {
     ObservableList<Traffic> data = FXCollections.observableArrayList();
 
 
-    TableView<Traffic> table = new TableView<Traffic>();
+    table = new TableView<Traffic>();
     table.setMinWidth(310);
 
     TableColumn facilityColumn = new TableColumn("Facility");
@@ -157,7 +164,6 @@ else
     {
       Title.setText("Status: " + "No record Found");
     }
-
 
 
 
