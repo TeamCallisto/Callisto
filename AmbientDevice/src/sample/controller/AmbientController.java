@@ -99,6 +99,13 @@ public class AmbientController implements Initializable {
 
   public void handleTrafficClick()throws IOException
   {
+    //Clear out text fields on the GUI
+    Time.setText("");
+    Date.setText("");
+    Status.setText("");
+    Inflow.setText("");
+    Outflow.setText("");
+    errorLabel.setText("");
     ObservableList<Traffic> data = FXCollections.observableArrayList();
 
 
